@@ -21,7 +21,8 @@ $.getJSON('https://api.foursquare.com/v2/venues/search?intent=browse&near=64.837
     function(data) {
         $.each(data.response.venues, function(i,venues){
 
-            content = '<p>' + venues.name +'</br>'+venues.location.address+ '</br>'+ venues.url+ '</br>' + venues.contact.formattedPhone+    '</p>';
+            content = '<p>' + venues.name +'</br>'+venues.location.formattedAddress+ '</br>'+
+            venues.url+ '</br>' + venues.contact.formattedPhone+ '</br>'+ "Checkins Counted= "+ venues.stats.checkinsCount+  '</p>';
             $(content).appendTo("#names");
             console.log(data.response);
 
