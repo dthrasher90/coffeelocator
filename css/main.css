@@ -1,14 +1,19 @@
 body{
-  background: darkkhaki;
+  background: aliceblue;
   color: midnightblue;
   font-family: arial;
 }
 
-header{
+.header{
 
-  height: 90px;
+  height: 200px;
   width: 100%;
-  background-color: wheat;
+  background-image: url("aurora.jpg");
+  text-align: center;
+  font-size: 38px;
+  color: white;
+  padding: 5px;
+
 }
 #mainwrapper{
 
@@ -20,7 +25,16 @@ header{
 #names{
   float: left;
   font: arial-black;
+  width: 600px;
+  height: 1500px;
+  border: 5px solid midnightblue;
 }
+
+h2{
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+  text-decoration: underline;
 
 #map {
      width: 45%;
