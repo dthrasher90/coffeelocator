@@ -1,0 +1,29 @@
+body{
+  background: darkkhaki;
+  color: midnightblue;
+  font-family: arial;
+}
+
+header{
+
+  height: 90px;
+  width: 100%;
+  background-color: wheat;
+}
+#mainwrapper{
+
+  clear: both;
+  height:1500px;
+  font-weight: bold;
+}
+
+#names{
+  float: left;
+  font: arial-black;
+}
+
+#map {
+     width: 45%;
+     height: 400px;
+     float: right;
+}
