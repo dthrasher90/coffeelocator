@@ -15,6 +15,28 @@ body{
   padding: 5px;
 
 }
+
+#cityInputCon{
+
+  height: 125px;
+  width: 100%;
+  border: 1px solid gold;
+  clear: both;
+  margin: 0 auto;
+  text-align: center;
+
+
+}
+
+#cityName{
+  margin-top: 50px;
+  margin-bottom: 25px;
+  width: 400px;
+  height: 65px;
+  font-size: 45px;
+}
+
+}
 #mainwrapper{
 
   clear: both;
@@ -26,8 +48,9 @@ body{
   float: left;
   font: arial-black;
   width: 600px;
-  height: 1500px;
+  height:400px;
   border: 5px solid midnightblue;
+  overflow: auto;
 }
 
 h2{
@@ -35,6 +58,7 @@ h2{
   margin: 0 auto;
   padding: 10px;
   text-decoration: underline;
+}
 
 #map {
      width: 45%;
