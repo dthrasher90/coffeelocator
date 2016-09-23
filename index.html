@@ -11,9 +11,10 @@
 <body>
 <!--- City Name input -->
 <div id="cityInputCon">
-<input type="text" id="cityName">
-<button id="button" value="Get City" onclick="getCityName()"/>
+<input type="text" id="cityName" placeholder="Fairbanks, AK">
+<input type="submit" id="button" value="Get City" />
 </div>
+<div id="results"> Coordinate Results </div>
 
 
 <!---Main Content Container ----->
@@ -27,7 +28,7 @@
 <div id="data"></div>
 </div>
 
-<!--Scripts---->
+<!--Script Links---->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5BlJo30YYd9DFQboFKdCX5iBn6GKPHyM&callback=initMap" async defer></script>
 <script src="js/main.js"></script>
