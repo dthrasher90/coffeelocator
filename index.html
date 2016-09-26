@@ -3,30 +3,34 @@
   <head>
   <title>Never Be Tired Again!</title>
   <link type="text/css" rel="stylesheet" href="css/main.css" />
-</head>
 
-<div class= "header">Never Be Tired Again!</div>
+
+  <!--- City Name input -->
+<div class= "headercontainer">
+<div class= "header">
+  <div id="cityInputCon">
+  <input type="text" id="cityName" placeholder="Fairbanks, AK">
+  <input type="submit" id="button" value="Get City" />
+</div>
+</div>
+</head>
+</div>
 
 
 <body>
-<!--- City Name input -->
-<div id="cityInputCon">
-<input type="text" id="cityName" placeholder="Fairbanks, AK">
-<input type="submit" id="button" value="Get City" />
-</div>
-<div id="results"> Coordinate Results </div>
-
 
 <!---Main Content Container ----->
-<div id="mainwrapper">
+<div class= "mainwrapper">
 <div id="map"></div>
+<div id="marker-tooltip"></div>
 
 <!--Left and right sub content -->
 <div id="names">
 <h2> Fairbanks Coffee Shops </h2>
 </div>
-<div id="data"></div>
 </div>
+<div id="data"></div>
+
 
 <!--Script Links---->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
