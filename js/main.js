@@ -21,12 +21,12 @@ $("#button").click(function(){
 //Google Json Request
   var url="https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key=AIzaSyA5BlJo30YYd9DFQboFKdCX5iBn6GKPHyM";
     $.getJSON(url, function(json){
-        console.log(json.results[0].geometry.location);
+      //  console.log(json.results[0].geometry.location);
         var myLat = json.results[0].geometry.location.lat;
         var myLong = json.results[0].geometry.location.lng;
 
-        console.log(myLat);
-        console.log(myLong)
+//        console.log(myLat);
+//        console.log(myLong)
 
 
         var userLocation = new google.maps.LatLng(myLat, myLong);
@@ -37,7 +37,7 @@ $("#button").click(function(){
 
   });
 
-  console.log(json.results[0]);
+ console.log(json.results[0]);
   var myLat = json.results[0].geometry.location.lat;
   var myLong = json.results[0].geometry.location.lng;
 
@@ -52,48 +52,38 @@ $.getJSON(fourSquareUrl, function(data){
             venues.url+ '</br>' + venues.contact.formattedPhone+ '</br>'+ "Checkins Counted= "+ venues.stats.checkinsCount+  '</p>';
             $(content).appendTo("#names");
           //  console.log(data.response);
-
-
-            var i;
-            for (i = 0; i < 20; i++) {
-                     var coffeeShopCoords = data.response.venues[i].location;
+var coffeeName = data.response.venues[i].name;
+var coffeeShopCoords = data.response.venues[i].location;
+ for(i = 0; i <= 15 i++) {
+                    //var coffeeShopCoords = data.response.venues[i].location;
+                  //   var coffeeName = data.response.venues[i].name;
                      var latLng = new google.maps.LatLng(coffeeShopCoords);
                      var marker = new google.maps.Marker({
                        position: latLng,
                        map: map
                      });
-                   }
 
-     marker.tooltipContent = 'this content should go inside the tooltip';
-               var infoWindow = new google.maps.InfoWindow({
-                   content: 'This is an info window'
-               });
+                     var contentString= '<div class="coffeeshopName">'+coffeeName+'</div>'
 
-     google.maps.event.addListener(marker, 'click', function () {
-           infoWindow.open(map, marker);
-       });
+                     var infowindow = new google.maps.InfoWindow({
+                         content: contentString,
+					               position: latLng
+                     });
 
 
-    google.maps.event.addListener(marker, 'mouseover', function () {
-        var point = fromLatLngToPoint(marker.getPosition(), map);
-        $('#marker-tooltip').html(marker.tooltipContent + '<br>Pixel coordinates: ' + point.x + ', ' + point.y).css({
-            'left': point.x,
-                'top': point.y
-        }).show();
-    });
+                      marker.addListener('mouseover', function()
+                      {
+                        infowindow.open(map, this);  });
 
+                      marker.addListener('mouseout', function()
+                      {
+                        infowindow.close();   });
 
+        console.log(data.response.venues[i]);
+      }
 
-        console.log(coffeeShopCoords);
-
-
-
-
-
-
-
-
-
+            //coffeeShop= json.results[0].geometry.location;
+            //console.log(coffeeShop);
             });
     });  });
 }); });
